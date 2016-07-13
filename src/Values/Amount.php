@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Value;
+namespace Payments\Values;
 
 use Payments\Exception\MalformedAmountException;
 
@@ -34,6 +34,14 @@ class Amount
     public function cents()
     {
         return $this->cents;
+    }
+
+    /**
+     * @return string
+     */
+    public function format()
+    {
+        return number_format($this->cents/100, 2, '.', '');
     }
 
     /**

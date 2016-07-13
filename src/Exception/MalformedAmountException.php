@@ -9,7 +9,7 @@ class MalformedAmountException extends \InvalidArgumentException
         $this->message = sprintf(
             "It is not possible to construct an amount of %d cents with currency %s",
             $cents,
-            $amount
+            $currency
         );
     }
 }

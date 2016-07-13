@@ -2,12 +2,20 @@
 
 namespace Payments;
 
-use Payments\Contract\Contract;
+use Payments\CustomerContract;
+use Payments\Values\Amount;
+
+use Ramsey\Uuid\Uuid;
 
 class Transaction
 {
     /**
-     * @var Contract $contract
+     * @var Uuid $id
+     */
+    private $id;
+
+    /**
+     * @var CustomerContract $contract
      */
     private $contract;
 
@@ -22,12 +30,45 @@ class Transaction
     private $isFristPayment;
 
     public function __construct(
-        Contract $contract,
+        CustomerContract $contract,
         Amount $amount,
         $isFirstPayment
     ) {
+        $this->id = Uuid::uuid4();
         $this->contract = $contract;
         $this->amount = $amount;
         $this->isFirstPayment = $isFirstPayment;
+    }
+
+    /**
+     * @return Uuid
+     */
+    public function id()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function formattedAmount()
+    {
+        return $this->amount->format();
+    }
+
+    /**
+     * @return string
+     */
+    public function currency()
+    {
+        return $this->amount->currency();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFirstPayment()
+    {
+        return $this->isFirstPayment;
     }
 }

@@ -2,33 +2,25 @@
 
 namespace Payments\Contract;
 
-use Payments\Customer;
+use Ramsey\Uuid\Uuid;
 
 class Contract implements ContractInterface
 {
     /**
-     * @var int $id
+     * @var Uuid $id
      */
     private $id;
 
-    /**
-     * @var Customer $customer
-     */
-    //private $customer;
+    public function __construct()
+    {
+        $this->id = Uuid::uuid4();
+    }
 
     /**
-     * @return int
+     * @return Uuid
      */
     public function id()
     {
         return $this->id;
     }
-
-    /**
-     * @return Customer
-     */
-    /*public function customer()
-    {
-        return $this->customer;
-    }*/
 }

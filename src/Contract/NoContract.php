@@ -8,9 +8,4 @@ class NoContract implements ContractInterface
     {
         return null;
     }
-
-    /*public function customer()
-    {
-        return null;
-    }*/
 }

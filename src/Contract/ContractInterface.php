@@ -7,12 +7,7 @@ use Payments\Customer;
 interface ContractInterface
 {
     /**
-     * @return int
+     * @return mixed
      */
     public function id();
-
-    /**
-     * @return Customer
-     */
-    //public function customer();
 }

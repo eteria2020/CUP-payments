@@ -10,7 +10,6 @@ interface PaymentInterface
      * Process a payment request
      *
      * @param PaymentRequest $request
-     * @return PaymentOutcome
      */
     public function pay(PaymentRequest $request);
 }

@@ -4,7 +4,7 @@ namespace Payments\Payments;
 
 use Payments\PaymentRequest\PaymentRequest;
 
-class Payment implements PaymentInterface
+class Payment implements CompletePaymentInterface
 {
     /**
      * @var FirstPayment $firstPayment
@@ -34,5 +34,11 @@ class Payment implements PaymentInterface
         } else {
             $this->tokenPayment->pay($request);
         }
+    }
+
+
+    public function completePayment()
+    {
+        $this->firstPayment->completePayment();
     }
 }

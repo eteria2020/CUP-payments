@@ -2,6 +2,9 @@
 
 namespace Payments;
 
+use Payments\Contract\ContractInterface;
+use Payments\Contract\NoContract;
+
 class Customer
 {
     /**
@@ -21,5 +24,21 @@ class Customer
     public function hasContract()
     {
         return !($this->contract instanceof NoContract);
+    }
+
+    /**
+     * @return ContractInterface
+     */
+    public function contract()
+    {
+        return $this->contract;
+    }
+
+    /**
+     * @return CustomerContract
+     */
+    public function customerContract()
+    {
+        return new CustomerContract($this, $this->contract);
     }
 }
