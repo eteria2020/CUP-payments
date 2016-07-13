@@ -1,12 +1,12 @@
 <?php
 
-namespace Payments\Events;
+namespace MvlabsPayments\Events;
 
-use Payments\Customer;
-use Payments\Contract\Contract;
-use Payments\CustomerContract;
-use Payments\Values\Amount;
-use Payments\Transaction;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Contract\Contract;
+use MvlabsPayments\CustomerContract;
+use MvlabsPayments\Values\Amount;
+use MvlabsPayments\Transaction;
 
 class TransactionCompletedEventTest extends \PHPUnit_Framework_TestCase
 {

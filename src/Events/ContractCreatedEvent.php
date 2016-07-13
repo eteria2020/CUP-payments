@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments\Events;
+namespace MvlabsPayments\Events;
 
-use Payments\CustomerContract;
+use MvlabsPayments\CustomerContract;
 
 use Zend\EventManager\Event;
 

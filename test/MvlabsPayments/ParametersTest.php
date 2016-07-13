@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
 class ParametersTest extends \PHPUnit_Framework_TestCase
 {
@@ -23,7 +23,7 @@ class ParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Payments\Exception\UnsetParameterException
+     * @expectedException \MvlabsPayments\Exception\UnsetParameterException
      */
     public function testAbsentGet()
     {

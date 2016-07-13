@@ -1,10 +1,10 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
-use Payments\Contract\Contract;
-use Payments\Contract\NoContract;
-use Payments\CustomerContract;
+use MvlabsPayments\Contract\Contract;
+use MvlabsPayments\Contract\NoContract;
+use MvlabsPayments\CustomerContract;
 
 class CustomerTets extends \PHPUnit_Framework_TestCase
 {

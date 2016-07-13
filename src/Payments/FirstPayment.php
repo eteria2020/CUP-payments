@@ -1,16 +1,16 @@
 <?php
 
-namespace Payments\Payments;
+namespace MvlabsPayments\Payments;
 
-use Payments\PaymentRequest\PaymentRequest;
-use Payments\CustomerContract;
-use Payments\Events\ContractCreatedEvent;
-use Payments\Events\TransactionCreatedEvent;
-use Payments\Events\FirstTransactionCompletedEvent;
-use Payments\Customer;
-use Payments\Parameters;
-use Payments\Transaction;
-use Payments\Values\Amount;
+use MvlabsPayments\PaymentRequest\PaymentRequest;
+use MvlabsPayments\CustomerContract;
+use MvlabsPayments\Events\ContractCreatedEvent;
+use MvlabsPayments\Events\TransactionCreatedEvent;
+use MvlabsPayments\Events\FirstTransactionCompletedEvent;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Parameters;
+use MvlabsPayments\Transaction;
+use MvlabsPayments\Values\Amount;
 
 use Zend\EventManager\EventManagerInterface;
 use Omnipay\Common\GatewayInterface;

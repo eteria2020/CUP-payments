@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Values;
+namespace MvlabsPayments\Values;
 
 class AmountTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class AmountTest extends \PHPUnit_Framework_TestCase
 
     public function testWrongCurrency()
     {
-        $this->expectException('Payments\Exception\MalformedAmountException');
+        $this->expectException('MvlabsPayments\Exception\MalformedAmountException');
 
         $amount = new Amount(213, 'EURI');
     }

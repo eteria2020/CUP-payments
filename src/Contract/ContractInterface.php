@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments\Contract;
+namespace MvlabsPayments\Contract;
 
-use Payments\Customer;
+use MvlabsPayments\Customer;
 
 interface ContractInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Exception;
+namespace MvlabsPayments\Exception;
 
 class MalformedAmountExceptionTest extends \PHPUnit_Framework_TestCase
 {

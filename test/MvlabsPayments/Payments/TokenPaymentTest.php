@@ -1,12 +1,12 @@
 <?php
 
-namespace Payments\Payments;
+namespace MvlabsPayments\Payments;
 
-use Payments\Parameters;
-use Payments\PaymentRequest\ConcretePaymentRequest;
-use Payments\Events\TransactionCreatedEvent;
-use Payments\Events\TransactionCompletedEvent;
-use Payments\Events\TransactionFailedEvent;
+use MvlabsPayments\Parameters;
+use MvlabsPayments\PaymentRequest\ConcretePaymentRequest;
+use MvlabsPayments\Events\TransactionCreatedEvent;
+use MvlabsPayments\Events\TransactionCompletedEvent;
+use MvlabsPayments\Events\TransactionFailedEvent;
 
 use Mockery as M;
 use Zend\EventManager\EventManagerInterface;

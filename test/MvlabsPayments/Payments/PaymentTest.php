@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments\Payments;
+namespace MvlabsPayments\Payments;
 
-use Payments\PaymentRequest\ConcretePaymentRequest;
+use MvlabsPayments\PaymentRequest\ConcretePaymentRequest;
 
 use Mockery as M;
 

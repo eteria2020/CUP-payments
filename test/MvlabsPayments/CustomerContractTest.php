@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
-use Payments\Contract\Contract;
+use MvlabsPayments\Contract\Contract;
 
 class CustomerContractTest extends \PHPUnit_Framework_TestCase
 {

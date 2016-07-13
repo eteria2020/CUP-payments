@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Events;
+namespace MvlabsPayments\Events;
 
 use Mockery as M;
 use Omnipay\Common\Message\ResponseInterface;

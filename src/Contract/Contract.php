@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Contract;
+namespace MvlabsPayments\Contract;
 
 use Ramsey\Uuid\Uuid;
 

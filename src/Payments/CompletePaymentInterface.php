@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Payments;
+namespace MvlabsPayments\Payments;
 
 interface CompletePaymentInterface extends PaymentInterface
 {

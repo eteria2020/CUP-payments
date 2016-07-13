@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Contract;
+namespace MvlabsPayments\Contract;
 
 class NoContractTest extends \PHPUnit_Framework_TestCase
 {

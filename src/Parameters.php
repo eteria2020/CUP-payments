@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
-use Payments\Exception\UnsetParameterException;
+use MvlabsPayments\Exception\UnsetParameterException;
 
 class Parameters
 {

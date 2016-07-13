@@ -1,10 +1,10 @@
 <?php
 
-namespace Payments\Events;
+namespace MvlabsPayments\Events;
 
-use Payments\Customer;
-use Payments\Contract\Contract;
-use Payments\CustomerContract;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Contract\Contract;
+use MvlabsPayments\CustomerContract;
 
 class ContractCreatedEventTest extends \PHPUnit_Framework_TestCase
 {

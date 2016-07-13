@@ -2,7 +2,7 @@
 <phpunit bootstrap="bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="Payments test">
-            <directory suffix="Test.php">./Payments</directory>
+            <directory suffix="Test.php">./MvlabsPayments</directory>
         </testsuite>
     </testsuites>
 </phpunit>

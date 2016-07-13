@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Contract;
+namespace MvlabsPayments\Contract;
 
 class NoContract implements ContractInterface
 {

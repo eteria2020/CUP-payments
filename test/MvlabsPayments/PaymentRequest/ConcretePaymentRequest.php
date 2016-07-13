@@ -1,10 +1,10 @@
 <?php
 
-namespace Payments\PaymentRequest;
+namespace MvlabsPayments\PaymentRequest;
 
-use Payments\Contract\Contract;
-use Payments\Customer;
-use Payments\Values\Amount;
+use MvlabsPayments\Contract\Contract;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Values\Amount;
 
 /**
  * Mock ckass to be used in Payment tests

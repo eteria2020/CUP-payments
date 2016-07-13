@@ -1,6 +1,6 @@
 <?php
 
-namespace Payments\Events;
+namespace MvlabsPayments\Events;
 
 use Zend\EventManager\Event;
 use Omnipay\Common\Message\ResponseInterface;

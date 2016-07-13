@@ -1,9 +1,9 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
-use Payments\Customer;
-use Payments\Contract\Contract;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Contract\Contract;
 
 class CustomerContract
 {

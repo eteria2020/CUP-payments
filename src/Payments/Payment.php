@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments\Payments;
+namespace MvlabsPayments\Payments;
 
-use Payments\PaymentRequest\PaymentRequest;
+use MvlabsPayments\PaymentRequest\PaymentRequest;
 
 class Payment implements CompletePaymentInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Payments\PaymentRequest;
+namespace MvlabsPayments\PaymentRequest;
 
-use Payments\Customer;
-use Payments\Value\Amount;
+use MvlabsPayments\Customer;
+use MvlabsPayments\Value\Amount;
 
 interface PaymentRequest
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Payments;
+namespace MvlabsPayments;
 
-use Payments\CustomerContract;
-use Payments\Values\Amount;
+use MvlabsPayments\CustomerContract;
+use MvlabsPayments\Values\Amount;
 
 use Ramsey\Uuid\Uuid;
 

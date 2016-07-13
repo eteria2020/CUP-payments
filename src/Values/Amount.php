@@ -1,8 +1,8 @@
 <?php
 
-namespace Payments\Values;
+namespace MvlabsPayments\Values;
 
-use Payments\Exception\MalformedAmountException;
+use MvlabsPayments\Exception\MalformedAmountException;
 
 class Amount
 {
