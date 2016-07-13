@@ -7,7 +7,7 @@
     ],
     "require": {
         "ramsey/uuid": "^3.4",
-        "zendframework/zend-eventmanager": "^3.0",
+        "zendframework/zend-eventmanager": "^2.4",
         "mvlabs/omnipay-cartasi": "@dev"
     },
     "require-dev": {

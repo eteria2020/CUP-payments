@@ -38,14 +38,14 @@ class TokenPaymentTest extends \PHPUnit_Framework_TestCase
     {
         $paymentRequest = new ConcretePaymentRequest(false);
 
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof TransactionCreatedEvent;
                 }
             )
         );
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof TransactionCompletedEvent;
@@ -68,14 +68,14 @@ class TokenPaymentTest extends \PHPUnit_Framework_TestCase
     {
         $paymentRequest = new ConcretePaymentRequest(false);
 
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof TransactionCreatedEvent;
                 }
             )
         );
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof TransactionFailedEvent;

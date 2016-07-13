@@ -74,7 +74,7 @@ class TokenPayment implements PaymentInterface
         $transaction = new Transaction($customerContract, $amount, true);
 
         $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction);
-        $this->eventManager->triggerEvent($transactionCreatedEvent);
+        $this->eventManager->trigger($transactionCreatedEvent);
 
         return $transaction;
     }
@@ -82,12 +82,12 @@ class TokenPayment implements PaymentInterface
     private function completedTransaction(Transaction $transaction)
     {
         $transactionCompletedEvent = new TransactionCompletedEvent($this, $transaction);
-        $this->eventManager->triggerEvent($transactionCompletedEvent);
+        $this->eventManager->trigger($transactionCompletedEvent);
     }
 
     private function failedTransaction(Transaction $transaction)
     {
         $transactionFailedEvent = new TransactionFailedEvent($this, $transaction);
-        $this->eventManager->triggerEvent($transactionFailedEvent);
+        $this->eventManager->trigger($transactionFailedEvent);
     }
 }

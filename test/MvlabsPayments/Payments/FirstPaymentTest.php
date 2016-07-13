@@ -38,14 +38,14 @@ class FirstPaymentTest extends \PHPUnit_Framework_TestCase
     {
         $paymentRequest = new ConcretePaymentRequest(true);
 
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof ContractCreatedEvent;
                 }
             )
         );
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof TransactionCreatedEvent;
@@ -66,7 +66,7 @@ class FirstPaymentTest extends \PHPUnit_Framework_TestCase
 
     public function testCompletePayment()
     {
-        $this->eventManager->shouldReceive('triggerEvent')->once()->with(
+        $this->eventManager->shouldReceive('trigger')->once()->with(
             M::on(
                 function ($event) {
                     return $event instanceof FirstTransactionCompletedEvent;

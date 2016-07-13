@@ -74,7 +74,7 @@ class FirstPayment implements CompletePaymentInterface
     private function createCustomerContract(Customer $customer)
     {
         $contractCreatedEvent = new ContractCreatedEvent($this, $customer->customerContract());
-        $this->eventManager->triggerEvent($contractCreatedEvent);
+        $this->eventManager->trigger($contractCreatedEvent);
 
         return $customer->customerContract();
     }
@@ -84,7 +84,7 @@ class FirstPayment implements CompletePaymentInterface
         $transaction = new Transaction($customerContract, $amount, true);
 
         $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction);
-        $this->eventManager->triggerEvent($transactionCreatedEvent);
+        $this->eventManager->trigger($transactionCreatedEvent);
 
         return $transaction;
     }
@@ -102,6 +102,6 @@ class FirstPayment implements CompletePaymentInterface
     private function completedTransaction(ResponseInterface $response)
     {
         $firstTransactionCompletedEvent = new FirstTransactionCompletedEvent($this, $response);
-        $this->eventManager->triggerEvent($firstTransactionCompletedEvent);
+        $this->eventManager->trigger($firstTransactionCompletedEvent);
     }
 }
