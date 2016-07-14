@@ -21,6 +21,8 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $paymentRequest = new ConcretePaymentRequest(true);
 
         $this->firstPayment->shouldReceive('pay')->with($paymentRequest);
+
+        $this->payment->pay($paymentRequest);
     }
 
     public function testRecurringPayment()
@@ -28,5 +30,7 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $paymentRequest = new ConcretePaymentRequest(false);
 
         $this->tokenPayment->shouldReceive('pay')->with($paymentRequest);
+
+        $this->payment->pay($paymentRequest);
     }
 }

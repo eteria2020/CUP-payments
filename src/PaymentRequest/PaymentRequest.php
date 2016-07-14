@@ -3,7 +3,7 @@
 namespace MvlabsPayments\PaymentRequest;
 
 use MvlabsPayments\Customer;
-use MvlabsPayments\Value\Amount;
+use MvlabsPayments\Values\Amount;
 
 interface PaymentRequest
 {

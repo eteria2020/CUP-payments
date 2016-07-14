@@ -20,8 +20,8 @@ class Payment implements CompletePaymentInterface
         FirstPayment $firstPayment,
         TokenPayment $tokenPayment
     ) {
-        $this->firstPayment;
-        $this->tokenPayment;
+        $this->firstPayment = $firstPayment;
+        $this->tokenPayment = $tokenPayment;
     }
 
     /**
