@@ -10,7 +10,7 @@ use Ramsey\Uuid\Uuid;
 class Transaction
 {
     /**
-     * @var Uuid $id
+     * @var $id
      */
     private $id;
 
@@ -54,6 +54,22 @@ class Transaction
     public function formattedAmount()
     {
         return $this->amount->format();
+    }
+
+    /**
+     * @return int
+     */
+    public function getAmountCents()
+    {
+        return $this->amount->cents();
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmountCurrency()
+    {
+        return $this->amount->currency();
     }
 
     /**

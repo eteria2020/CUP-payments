@@ -12,10 +12,14 @@ class Customer
      */
     private $contract;
 
+    private $id;
+
     public function __construct(
+        $id,
         ContractInterface $contract
     ) {
         $this->contract = $contract;
+        $this->id = $id;
     }
 
     /**
@@ -40,5 +44,13 @@ class Customer
     public function customerContract()
     {
         return new CustomerContract($this, $this->contract);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function id()
+    {
+        return $this->id;
     }
 }
