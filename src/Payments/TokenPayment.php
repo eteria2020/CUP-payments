@@ -48,7 +48,7 @@ class TokenPayment implements PaymentInterface
     {
         $customer = $request->customer();
 
-        $transaction = $this->createTransaction($request->amount(), $customer->customerContract());
+        $transaction = $this->createTransaction($request, $customer->customerContract());
 
         $parameters = [
             'alias' => $this->parameters->alias,
@@ -69,9 +69,9 @@ class TokenPayment implements PaymentInterface
         }
     }
 
-    private function createTransaction(Amount $amount, CustomerContract $customerContract)
+    private function createTransaction(PaymentRequest $request, CustomerContract $customerContract)
     {
-        $transaction = new Transaction($customerContract, $amount, true);
+        $transaction = new Transaction($customerContract, $request->amount(), true);
 
         $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction);
         $this->eventManager->trigger($transactionCreatedEvent);
