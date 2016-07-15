@@ -27,7 +27,7 @@ class Transaction
     /**
      * @var bool $isFirstPayment
      */
-    private $isFristPayment;
+    private $isFirstPayment;
 
     public function __construct(
         CustomerContract $contract,
