@@ -31,4 +31,12 @@ class CustomerTets extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(CustomerContract::class, $customer->customerContract());
     }
+
+    public function testId()
+    {
+        $contract = new NoContract();
+        $customer = new Customer(10, $contract);
+
+        $this->assertSame(10, $customer->id());
+    }
 }

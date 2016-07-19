@@ -61,17 +61,9 @@ class Transaction
     /**
      * @return int
      */
-    public function getAmountCents()
+    public function amountCents()
     {
         return $this->amount->cents();
-    }
-
-    /**
-     * @return string
-     */
-    public function getAmountCurrency()
-    {
-        return $this->amount->currency();
     }
 
     /**
