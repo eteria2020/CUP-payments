@@ -5,8 +5,6 @@ namespace MvlabsPayments;
 use MvlabsPayments\CustomerContract;
 use MvlabsPayments\Values\Amount;
 
-use Ramsey\Uuid\Uuid;
-
 class Transaction
 {
     /**
@@ -34,14 +32,18 @@ class Transaction
         Amount $amount,
         $isFirstPayment
     ) {
-        $this->id = Uuid::uuid4();
         $this->contract = $contract;
         $this->amount = $amount;
         $this->isFirstPayment = $isFirstPayment;
     }
 
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     /**
-     * @return Uuid
+     * @return integer
      */
     public function id()
     {
