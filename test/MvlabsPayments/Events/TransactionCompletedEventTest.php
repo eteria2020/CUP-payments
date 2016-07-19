@@ -12,8 +12,8 @@ class TransactionCompletedEventTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $contract = new Contract();
-        $customer = new Customer($contract);
+        $contract = new Contract(1);
+        $customer = new Customer(10, $contract);
         $customerContract = new CustomerContract($customer);
 
         $amount = new Amount(123, 'EUR');

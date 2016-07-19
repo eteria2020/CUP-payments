@@ -23,9 +23,9 @@ class ConcretePaymentRequest implements PaymentRequest
 
     public function customer()
     {
-        $contract = new Contract();
+        $contract = new Contract(1);
 
-        return new Customer($contract);
+        return new Customer(10, $contract);
     }
 
     public function amount()

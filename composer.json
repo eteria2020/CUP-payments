@@ -6,7 +6,6 @@
         "payment"
     ],
     "require": {
-        "ramsey/uuid": "^3.4",
         "zendframework/zend-eventmanager": "^2.4"
     },
     "require-dev": {
