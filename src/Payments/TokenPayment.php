@@ -56,7 +56,6 @@ class TokenPayment implements PaymentInterface
             'currency' => $transaction->currency(),
             'transactionId' => $transaction->id(),
             'cardReference' => $this->parameters->cardReference,
-            'card' => $this->parameters->card,
             'requestType' => $this->parameters->requestType
         ];
 
