@@ -73,7 +73,7 @@ class TokenPayment implements PaymentInterface
     {
         $transaction = new Transaction($customerContract, $request->amount(), true);
 
-        $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction);
+        $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction, $request);
         $this->eventManager->trigger($transactionCreatedEvent);
 
         return $transaction;

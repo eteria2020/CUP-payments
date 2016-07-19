@@ -8,8 +8,8 @@ class CustomerContractTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstuct()
     {
-        $contract = new Contract();
-        $customer = new Customer($contract);
+        $contract = new Contract(1);
+        $customer = new Customer(10, $contract);
 
         $customerContract = new CustomerContract($customer);
 
