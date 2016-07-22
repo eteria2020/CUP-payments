@@ -11,7 +11,7 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $contract = new Contract(1);
+        $contract = new Contract(1, '202011');
         $customer = new Customer(10, $contract);
         $customerContract = new CustomerContract($customer);
 

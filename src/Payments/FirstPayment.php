@@ -59,7 +59,9 @@ class FirstPayment implements CompletePaymentInterface
             'transactionId' => $transaction->id(),
             'returnUrl' => $this->parameters->returnUrl,
             'cancelUrl' => $this->parameters->cancelUrl,
-            'messageAuthenticationCodeKey' => $this->parameters->macKey
+            'messageAuthenticationCodeKey' => $this->parameters->macKey,
+            'cardReference' => $customerContract->contract()->id(),
+            'serviceType' => $this->parameters->serviceType,
         ];
 
         $response = $this->gateway->purchase($parameters)->send();

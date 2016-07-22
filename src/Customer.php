@@ -53,4 +53,9 @@ class Customer
     {
         return $this->id;
     }
+
+    public function setContract(ContractInterface $contract)
+    {
+        $this->contract = $contract;
+    }
 }

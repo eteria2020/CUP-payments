@@ -10,7 +10,7 @@ class CustomerTets extends \PHPUnit_Framework_TestCase
 {
     public function testHasContract()
     {
-        $contract = new Contract(1);
+        $contract = new Contract(1, '202011');
         $customer = new Customer(10, $contract);
 
         $this->assertTrue($customer->hasContract());
@@ -26,7 +26,7 @@ class CustomerTets extends \PHPUnit_Framework_TestCase
 
     public function testCustomerContract()
     {
-        $contract = new Contract(1);
+        $contract = new Contract(1, '202011');
         $customer = new Customer(10, $contract);
 
         $this->assertInstanceOf(CustomerContract::class, $customer->customerContract());

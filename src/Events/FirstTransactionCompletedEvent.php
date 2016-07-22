@@ -13,7 +13,8 @@ class FirstTransactionCompletedEvent extends Event
             'transactionId' => $response->getTransactionId(),
             'contractId' => $response->getContractId(),
             'amount' => $response->getAmount(),
-            'currency' => $response->getCurrency()
+            'currency' => $response->getCurrency(),
+            'cardExpiryDate' => $response->getCardExpiryDate()
         ];
 
         parent::__construct('firstTransactionCompleted', $target, $params);
