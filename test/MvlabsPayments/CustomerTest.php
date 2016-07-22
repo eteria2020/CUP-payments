@@ -39,4 +39,14 @@ class CustomerTets extends \PHPUnit_Framework_TestCase
 
         $this->assertSame(10, $customer->id());
     }
+
+    public function testSetContract()
+    {
+        $contract = new NoContract();
+        $customer = new Customer(10, $contract);
+        $contract = new Contract(1, '202011');
+        $customer->setContract($contract);
+
+        $this->assertTrue($customer->hasContract());
+    }
 }

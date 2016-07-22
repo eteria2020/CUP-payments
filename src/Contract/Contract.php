@@ -9,7 +9,7 @@ class Contract implements ContractInterface
      */
     private $id;
     /**
-     * @var string
+     * @var string YYYYMM $expiryDate
      */
     private $expiryDate;
 
