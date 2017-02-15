@@ -10,4 +10,6 @@ interface ContractInterface
      * @return mixed
      */
     public function id();
+
+    public function expiryDate();
 }

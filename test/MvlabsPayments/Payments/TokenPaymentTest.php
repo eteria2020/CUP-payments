@@ -22,9 +22,9 @@ class TokenPaymentTest extends \PHPUnit_Framework_TestCase
         $this->gateway = M::mock(GatewayInterface::class);
         $parameters = new Parameters([
             'alias' => 'batman',
-            'cardReference' => 'mycard',
-            'card' => '1234567890123456',
-            'requestType' => 'recurringPyament'
+            'requestType' => 'recurringPyament',
+            'serviceType' => 'rico',
+            'macKey' => 'myMacKey'
         ]);
 
         $this->tokenPayment = new TokenPayment(

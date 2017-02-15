@@ -10,7 +10,7 @@ class ContractCreatedEventTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $contract = new Contract(1);
+        $contract = new Contract(1, '202011');
         $customer = new Customer(10, $contract);
         $this->customerContract = new CustomerContract($customer);
 

@@ -8,4 +8,9 @@ class NoContract implements ContractInterface
     {
         return null;
     }
+
+    public function expiryDate()
+    {
+        return null;
+    }
 }

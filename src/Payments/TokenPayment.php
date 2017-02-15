@@ -55,8 +55,10 @@ class TokenPayment implements PaymentInterface
             'amount' => $transaction->formattedAmount(),
             'currency' => $transaction->currency(),
             'transactionId' => $transaction->id(),
-            'cardReference' => $this->parameters->cardReference,
-            'requestType' => $this->parameters->requestType
+            'cardReference' => $customer->contract()->id(),
+            'messageAuthenticationCodeKey' => $this->parameters->macKey,
+            'requestType' => $this->parameters->requestType,
+            'serviceType' => $this->parameters->serviceType,
         ];
 
         $response = $this->gateway->purchase($parameters)->send();

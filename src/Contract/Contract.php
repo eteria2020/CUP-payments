@@ -8,10 +8,15 @@ class Contract implements ContractInterface
      * @var integer $id
      */
     private $id;
+    /**
+     * @var string YYYYMM $expiryDate
+     */
+    private $expiryDate;
 
-    public function __construct($id)
+    public function __construct($id, $expiryDate)
     {
         $this->id = $id;
+        $this->expiryDate = $expiryDate;
     }
 
     /**
@@ -20,5 +25,13 @@ class Contract implements ContractInterface
     public function id()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function expiryDate()
+    {
+        return $this->expiryDate;
     }
 }
