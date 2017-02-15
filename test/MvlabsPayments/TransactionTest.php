@@ -5,24 +5,25 @@ namespace MvlabsPayments;
 use MvlabsPayments\Contract\Contract;
 use MvlabsPayments\Values\Amount;
 
-use Ramsey\Uuid\Uuid;
-
 class TransactionTest extends \PHPUnit_Framework_TestCase
 {
+    private $transaction;
+
     public function setUp()
     {
-        $contract = new Contract();
-        $customer = new Customer($contract);
+        $contract = new Contract(1, '202011');
+        $customer = new Customer(10, $contract);
         $customerContract = new CustomerContract($customer);
 
         $amount = new Amount(123, 'EUR');
 
         $this->transaction = new Transaction($customerContract, $amount, true);
+        $this->transaction->setId(100);
     }
 
     public function testId()
     {
-        $this->assertInstanceOf(Uuid::class, $this->transaction->id());
+        $this->assertSame(100, $this->transaction->id());
     }
 
     public function testFormattedAmout()

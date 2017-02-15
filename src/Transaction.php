@@ -5,12 +5,10 @@ namespace MvlabsPayments;
 use MvlabsPayments\CustomerContract;
 use MvlabsPayments\Values\Amount;
 
-use Ramsey\Uuid\Uuid;
-
 class Transaction
 {
     /**
-     * @var Uuid $id
+     * @var $id
      */
     private $id;
 
@@ -27,21 +25,25 @@ class Transaction
     /**
      * @var bool $isFirstPayment
      */
-    private $isFristPayment;
+    private $isFirstPayment;
 
     public function __construct(
         CustomerContract $contract,
         Amount $amount,
         $isFirstPayment
     ) {
-        $this->id = Uuid::uuid4();
         $this->contract = $contract;
         $this->amount = $amount;
         $this->isFirstPayment = $isFirstPayment;
     }
 
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     /**
-     * @return Uuid
+     * @return integer
      */
     public function id()
     {
@@ -54,6 +56,14 @@ class Transaction
     public function formattedAmount()
     {
         return $this->amount->format();
+    }
+
+    /**
+     * @return int
+     */
+    public function amountCents()
+    {
+        return $this->amount->cents();
     }
 
     /**

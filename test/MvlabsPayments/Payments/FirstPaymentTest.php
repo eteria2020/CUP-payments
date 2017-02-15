@@ -24,7 +24,8 @@ class FirstPaymentTest extends \PHPUnit_Framework_TestCase
             'alias' => 'batman',
             'returnUrl' => 'http://example.com/return/url',
             'cancelUrl' => 'http://example.com/cancel/url',
-            'macKey' => 'ajfgarefaldfkjanliue560254i'
+            'macKey' => 'ajfgarefaldfkjanliue560254i',
+            'serviceType' => 'rico',
         ]);
 
         $this->firstPayment = new FirstPayment(
@@ -79,6 +80,7 @@ class FirstPaymentTest extends \PHPUnit_Framework_TestCase
         $response->shouldReceive('getContractId');
         $response->shouldReceive('getAmount');
         $response->shouldReceive('getCurrency');
+        $response->shouldReceive('getCardExpiryDate');
 
         $request = M::mock(RequestInterface::class);
         $request->shouldReceive('send')->andReturn($response);

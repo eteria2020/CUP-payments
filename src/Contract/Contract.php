@@ -2,25 +2,36 @@
 
 namespace MvlabsPayments\Contract;
 
-use Ramsey\Uuid\Uuid;
-
 class Contract implements ContractInterface
 {
     /**
-     * @var Uuid $id
+     * @var integer $id
      */
     private $id;
+    /**
+     * @var string YYYYMM $expiryDate
+     */
+    private $expiryDate;
 
-    public function __construct()
+    public function __construct($id, $expiryDate)
     {
-        $this->id = Uuid::uuid4();
+        $this->id = $id;
+        $this->expiryDate = $expiryDate;
     }
 
     /**
-     * @return Uuid
+     * @return integer
      */
     public function id()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function expiryDate()
+    {
+        return $this->expiryDate;
     }
 }

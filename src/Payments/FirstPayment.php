@@ -50,7 +50,7 @@ class FirstPayment implements CompletePaymentInterface
     {
         $customerContract = $this->createCustomerContract($request->customer());
 
-        $transaction = $this->createTransaction($request->amount(), $customerContract);
+        $transaction = $this->createTransaction($request, $customerContract);
 
         $parameters = [
             'alias' => $this->parameters->alias,
@@ -59,7 +59,9 @@ class FirstPayment implements CompletePaymentInterface
             'transactionId' => $transaction->id(),
             'returnUrl' => $this->parameters->returnUrl,
             'cancelUrl' => $this->parameters->cancelUrl,
-            'messageAuthenticationCodeKey' => $this->parameters->macKey
+            'messageAuthenticationCodeKey' => $this->parameters->macKey,
+            'cardReference' => $customerContract->contract()->id(),
+            'serviceType' => $this->parameters->serviceType,
         ];
 
         $response = $this->gateway->purchase($parameters)->send();
@@ -79,11 +81,11 @@ class FirstPayment implements CompletePaymentInterface
         return $customer->customerContract();
     }
 
-    private function createTransaction(Amount $amount, CustomerContract $customerContract)
+    private function createTransaction(PaymentRequest $request, CustomerContract $customerContract)
     {
-        $transaction = new Transaction($customerContract, $amount, true);
+        $transaction = new Transaction($customerContract, $request->amount(), true);
 
-        $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction);
+        $transactionCreatedEvent = new TransactionCreatedEvent($this, $transaction, $request);
         $this->eventManager->trigger($transactionCreatedEvent);
 
         return $transaction;

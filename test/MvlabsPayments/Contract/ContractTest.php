@@ -2,13 +2,11 @@
 
 namespace MvlabsPayments\Contract;
 
-use Ramsey\Uuid\Uuid;
-
 class ContractTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->contract = new Contract();
+        $this->contract = new Contract(1, '201511');
     }
 
     public function testInstanceOfContractInterface()
@@ -18,6 +16,11 @@ class ContractTest extends \PHPUnit_Framework_TestCase
 
     public function testId()
     {
-        $this->assertInstanceOf(Uuid::class, $this->contract->id());
+        $this->assertSame(1, $this->contract->id());
+    }
+
+    public function testExpiryDate()
+    {
+        $this->assertSame('201511', $this->contract->expiryDate());
     }
 }

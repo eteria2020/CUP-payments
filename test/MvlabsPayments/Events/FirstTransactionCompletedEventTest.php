@@ -14,6 +14,7 @@ class FirstTransactionCompletedEventTest extends \PHPUnit_Framework_TestCase
         $this->response->shouldReceive('getContractId')->andReturn(7890);
         $this->response->shouldReceive('getAmount')->andReturn(1234);
         $this->response->shouldReceive('getCurrency')->andReturn('EUR');
+        $this->response->shouldReceive('getCardExpiryDate')->andReturn('201511');
 
         $this->event = new FirstTransactionCompletedEvent($this, $this->response);
     }
@@ -34,7 +35,8 @@ class FirstTransactionCompletedEventTest extends \PHPUnit_Framework_TestCase
             'transactionId' => $this->response->getTransactionId(),
             'contractId' => $this->response->getContractId(),
             'amount' => $this->response->getAmount(),
-            'currency' => $this->response->getCurrency()
+            'currency' => $this->response->getCurrency(),
+            'cardExpiryDate' => $this->response->getCardExpiryDate()
         ];
 
         $this->assertSame($parameters, $this->event->getParams());
